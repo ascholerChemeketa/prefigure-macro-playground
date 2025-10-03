@@ -1,5 +1,19 @@
 <diagram>
   <annotations>
+    <annotation id="stack-frame-main" speech2="stack frame for main">
+      <grouped>stack-frame-main</grouped>
+      <position>1</position>
+      <children>
+        <active>variable-x</active>
+        <active>variable-y</active>
+        <active>variable-z</active>
+      </children>
+      <components>
+        <active>variable-x</active>
+        <active>variable-y</active>
+        <active>variable-z</active>
+      </components>
+    </annotation>
     <annotation id="variable-x" speech2="The variable x">
       <grouped>variable-x</grouped>
       <position>1</position>
@@ -9,6 +23,9 @@
       <components>
         <active>variable-x-value</active>
       </components>
+      <parents>
+        <grouped>stack-frame-main</grouped>
+      </parents>
     </annotation>
     <annotation id="variable-x-value" speech2="The value of x is 10">
       <active>variable-x-value</active>
@@ -19,13 +36,16 @@
     </annotation>
     <annotation id="variable-y" speech2="The variable y">
       <grouped>variable-y</grouped>
-      <position>3</position>
+      <position>2</position>
       <children>
         <active>variable-y-value</active>
       </children>
       <components>
         <active>variable-y-value</active>
       </components>
+      <parents>
+        <grouped>stack-frame-main</grouped>
+      </parents>
     </annotation>
     <annotation id="variable-y-value" speech2="The value of y is 5">
       <active>variable-y-value</active>
@@ -36,13 +56,16 @@
     </annotation>
     <annotation id="variable-z" speech2="The variable z">
       <grouped>variable-z</grouped>
-      <position>5</position>
+      <position>3</position>
       <children>
         <active>variable-z-value</active>
       </children>
       <components>
         <active>variable-z-value</active>
       </components>
+      <parents>
+        <grouped>stack-frame-main</grouped>
+      </parents>
     </annotation>
     <annotation id="variable-z-value" speech2="The value of z is 135">
       <active>variable-z-value</active>

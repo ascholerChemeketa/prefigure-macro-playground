@@ -7,41 +7,47 @@
       <rect x="5.0" y="5.0" width="300.0" height="200.0"/>
     </clipPath>
   </defs>
+  <g id="label-0" transform="translate(35.0,35.0) translate(-17.5,-5.4)">
+    <g id="g-0">
+      <text font-family="sans-serif" font-size="14" x="0.0" y="10.6">main</text>
+    </g>
+  </g>
+  <path id="stack-frame-main" d="M 55.0 25.0 L 205.0 25.0 L 205.0 115.0 L 55.0 115.0 Z" stroke="blue" stroke-width="1" fill="none"/>
   <g id="variable-x">
-    <g id="label-0" transform="translate(51.0,45.0) translate(-8.3,-3.8)">
-      <g id="g-0">
+    <g id="label-1" transform="translate(71.0,45.0) translate(-8.3,-3.8)">
+      <g id="g-1">
         <text font-family="sans-serif" font-size="14" x="0.0" y="7.7">x</text>
       </g>
     </g>
-    <path id="path-0" d="M 55.0 35.0 L 175.0 35.0 L 175.0 55.0 L 55.0 55.0 Z" stroke="black" stroke-width="1" fill="none"/>
-    <g id="variable-x-value" transform="translate(115.0,45.0) translate(-8.9,-5.3)">
-      <g id="g-1">
+    <path id="path-0" d="M 75.0 35.0 L 195.0 35.0 L 195.0 55.0 L 75.0 55.0 Z" stroke="black" stroke-width="1" fill="none"/>
+    <g id="variable-x-value" transform="translate(135.0,45.0) translate(-8.9,-5.3)">
+      <g id="g-2">
         <text font-family="sans-serif" font-size="14" x="0.0" y="10.4">10</text>
       </g>
     </g>
   </g>
   <g id="variable-y">
-    <g id="label-1" transform="translate(51.0,70.0) translate(-8.3,-5.3)">
-      <g id="g-2">
+    <g id="label-2" transform="translate(71.0,70.0) translate(-8.3,-5.3)">
+      <g id="g-3">
         <text font-family="sans-serif" font-size="14" x="0.0" y="7.7">y</text>
       </g>
     </g>
-    <path id="path-1" d="M 55.0 60.0 L 175.0 60.0 L 175.0 80.0 L 55.0 80.0 Z" stroke="black" stroke-width="1" fill="none"/>
-    <g id="variable-y-value" transform="translate(115.0,70.0) translate(-4.5,-5.2)">
-      <g id="g-3">
+    <path id="path-1" d="M 75.0 60.0 L 195.0 60.0 L 195.0 80.0 L 75.0 80.0 Z" stroke="black" stroke-width="1" fill="none"/>
+    <g id="variable-y-value" transform="translate(135.0,70.0) translate(-4.5,-5.2)">
+      <g id="g-4">
         <text font-family="sans-serif" font-size="14" x="0.0" y="10.2">5</text>
       </g>
     </g>
   </g>
   <g id="variable-z">
-    <g id="label-2" transform="translate(51.0,95.0) translate(-7.3,-3.8)">
-      <g id="g-4">
+    <g id="label-3" transform="translate(71.0,95.0) translate(-7.3,-3.8)">
+      <g id="g-5">
         <text font-family="sans-serif" font-size="14" x="0.0" y="7.7">z</text>
       </g>
     </g>
-    <path id="path-2" d="M 55.0 85.0 L 175.0 85.0 L 175.0 105.0 L 55.0 105.0 Z" stroke="black" stroke-width="1" fill="none"/>
-    <g id="variable-z-value" transform="translate(115.0,95.0) translate(-13.4,-5.3)">
-      <g id="g-5">
+    <path id="path-2" d="M 75.0 85.0 L 195.0 85.0 L 195.0 105.0 L 75.0 105.0 Z" stroke="black" stroke-width="1" fill="none"/>
+    <g id="variable-z-value" transform="translate(135.0,95.0) translate(-13.4,-5.3)">
+      <g id="g-6">
         <text font-family="sans-serif" font-size="14" x="0.0" y="10.4">135</text>
       </g>
     </g>
