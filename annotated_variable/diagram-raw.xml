@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<diagram dimensions="(300,200)"
+         margins="5"
+         xmlns:author="http://example.org">
+    <!-- xmlns:author="http://example.org" needed to define the author namespace -->
+
+    <!-- reverse y-axis back to normal SVG (0 is top) -->
+    <coordinates bbox="(0,200,300,0)">
+
+        <!-- author:variable is an author defined "macro" that will be expanded     -->
+        <!-- by an XSLT stylesheet into a collection of standard PreFigure elements -->
+
+        <rectangle lower-left="(30, 20)" dimensions="(150, 90)" stroke="blue" fill="#dff2ff" thickness="1"/>
+        <author:variable name="x"
+                         value="10"
+                         anchor="(50, 30)"/>
+
+        <author:variable name="y"
+                         value="5" 
+                         anchor="(50, 55)"/>
+
+        <author:variable name="z"
+                         value="135"
+                         anchor="(50, 80)"/>
+
+    </coordinates>
+
+    <annotations>
+        <!-- we will rely on the variable macro generating @at attributes based on variable names   -->
+        <!-- these will be fleshed out by the macro - we explicitly represent them here in case     -->
+        <!-- here in case there is other annotation structure and we need to make sure the variable -->
+        <!-- annotations appear in the right place in the output document                           -->
+        <author:variable-annotation ref="variable-x"/>
+        <author:variable-annotation ref="variable-y"/>
+        <author:variable-annotation ref="variable-z"/>
+    </annotations>
+</diagram>

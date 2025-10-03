@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<diagram xmlns:author="http://example.org" dimensions="(300,200)" margins="5">
+    <!-- xmlns:author="http://example.org" needed to define the author namespace -->
+
+    <!-- reverse y-axis back to normal SVG (0 is top) -->
+    <coordinates bbox="(0,200,300,0)">
+
+        <definition>xBase=50</definition>
+
+        <rectangle lower-left="(xBase - 20, 20)" dimensions="(150, 90)" stroke="blue" thickness="1"/>
+    
+        <!-- author:variable is an author defined "macro" that will be expanded     -->
+        <!-- by an XSLT stylesheet into a collection of standard PreFigure elements -->
+        <group font="monospace"><label anchor="(xBase, 30 + 20 / 2)" alignment="west">x</label><rectangle lower-left="(xBase, 30)" dimensions="(120, 20)" stroke="black" thickness="1"/><label anchor="(xBase + 120 / 2,30 + 20 / 2)" alignment="c">10</label></group>
+
+        <group font="monospace"><label anchor="(xBase, 55 + 20 / 2)" alignment="west">y</label><rectangle lower-left="(xBase, 55)" dimensions="(120, 20)" stroke="black" thickness="1"/><label anchor="(xBase + 120 / 2,55 + 20 / 2)" alignment="c">5</label></group>
+ 
+        <group font="monospace"><label anchor="(xBase, 80 + 20 / 2)" alignment="west">z</label><rectangle lower-left="(xBase, 80)" dimensions="(120, 20)" stroke="black" thickness="1"/><label anchor="(xBase + 120 / 2,80 + 20 / 2)" alignment="c">135</label></group>
+
+    </coordinates>
+
+    <!-- required for prefig playground -->
+    <annotations/>
+</diagram>
