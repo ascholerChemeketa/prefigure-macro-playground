@@ -3,6 +3,7 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:author="http://example.org">
 
+    <!-- import some shared templates-->
     <xsl:import href="../basics-templates.xsl"/>
 
     <xsl:variable name="default-variable-width" select="120"/>
