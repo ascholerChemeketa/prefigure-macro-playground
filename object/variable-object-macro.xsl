@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:math="http://exslt.org/math"
+                xmlns:exsl="http://exslt.org/common"
+                xmlns:author="http://example.org">
+
+    <xsl:import href="../basics-templates.xsl"/>
+
+    <xsl:variable name="default-variable-width" select="100"/>
+    <xsl:variable name="default-label-width" select="60"/>
+    <xsl:variable name="default-variable-height" select="20"/>
+
+    <xsl:template match="author:variable" mode="get-height">
+        <xsl:choose>
+            <xsl:when test="@height">
+                <xsl:value-of select="@height"/>
+            </xsl:when>
+            <xsl:when test="count(author:variable) > 0">
+                <xsl:variable name="child-heights">
+                    <xsl:for-each select="author:variable">
+                        <h><xsl:apply-templates select="." mode="get-height"/></h>
+                    </xsl:for-each>
+                </xsl:variable>
+                <xsl:variable name="child-height-list" select="exsl:node-set($child-heights)/h"/>
+                <xsl:variable name="total-child-height">
+                    <xsl:value-of select="sum($child-height-list) + 5 * (count(author:variable) + 2)"/>
+                </xsl:variable>
+                <xsl:value-of select="$total-child-height"/>
+            </xsl:when>
+            <xsl:otherwise><xsl:value-of select="$default-variable-height"/></xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="author:variable" mode="get-width">
+        <xsl:choose>
+            <xsl:when test="@width">
+                <xsl:value-of select="@width"/>
+            </xsl:when>
+            <xsl:when test="count(author:variable) > 0">
+                <xsl:variable name="child-widths">
+                    <xsl:for-each select="author:variable">
+                        <w><xsl:apply-templates select="." mode="get-width"/></w>
+                    </xsl:for-each>
+                </xsl:variable>
+                <xsl:variable name="child-width-list" select="exsl:node-set($child-widths)/*"/>
+                <xsl:value-of select="math:max($child-width-list) + 20"/>
+            </xsl:when>
+            <xsl:otherwise><xsl:value-of select="$default-variable-width + $default-label-width"/></xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <!-- expansion for "author:variable" elements -->
+    <xsl:template match="author:variable">
+        <xsl:param name="x-offset" select="0"/>
+        <xsl:param name="y-offset" select="0"/>
+        <!-- store the expected attributes into variables to use in this template -->
+        <xsl:variable name="name"
+                      select="@name"/>
+        <xsl:variable name="value"
+                      select="@value"/>
+        <xsl:variable name="anchor"
+                      select="@anchor"/>
+
+        <xsl:variable name="width">
+            <xsl:apply-templates select="." mode="get-width"/>
+        </xsl:variable>
+
+        <xsl:variable name="height">
+            <xsl:apply-templates select="." mode="get-height"/>
+        </xsl:variable>
+
+        <!-- extract x and y components from the anchor -->
+        <xsl:variable name="anchor-x">
+            <xsl:call-template name="xFromCoords">
+                <xsl:with-param name="coords"
+                                select="$anchor"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <xsl:variable name="anchor-y">
+            <xsl:call-template name="yFromCoords">
+                <xsl:with-param name="coords"
+                                select="$anchor"/>
+            </xsl:call-template>
+        </xsl:variable>
+
+        <!-- create a group to hold the variable name, box, and value -->
+        <!-- when used in the string value of an attribute, {$name} -->
+        <!-- inserts the value of the variable "name" -->
+        <group font="monospace">
+            <!-- We want to write the new attribute values as text expressions -->
+            <!-- so that prefig definitions can be interpreted correctly       -->
+            <!-- That means producing something like "(10, 20 + 30 / 2)"       -->
+            <!-- or "(10, yBase + 30 / 2)" instead of doing the math in xsl    -->
+            <label anchor="({$anchor-x}, {$anchor-y} + {$height} / 2)"
+                   alignment="west">
+                <!-- To use a variable in the body of an element, we must -->
+                <!-- use xsl:value-of to insert its value -->
+                <xsl:value-of select="$name"/>
+            </label>
+            <rectangle lower-left="{$anchor}"
+                       dimensions="({$width}, {$height})"
+                       stroke="black"
+                       thickness="1">
+            </rectangle>
+            <label anchor="({$anchor-x} + {$width} / 2,{$anchor-y} + {$height} / 2)"
+                   alignment="c">
+                <xsl:value-of select="$value"/>
+            </label>
+        </group>
+    </xsl:template>
+
+</xsl:stylesheet>

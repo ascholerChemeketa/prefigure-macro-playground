@@ -10,8 +10,8 @@
         </xsl:copy>
     </xsl:template>
 
-    <!-- helpers to decompose strings like "(200, 20)" into x and y coordinates -->
-    <!-- result is a string as there is no guarantee that the coordinate is not -->
+    <!-- helpers to decompose strings like "(200, 20)" into x and y components  -->
+    <!-- Result is a string as there is no guarantee that the value may include -->
     <!-- a prefig definition or python expression                               -->
     <xsl:template name="xFromCoords">
         <xsl:param name="coords"/>

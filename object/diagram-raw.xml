@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<diagram dimensions="(300,200)"
+         margins="5"
+         xmlns:author="http://example.org">
+    <!-- xmlns:author="http://example.org" needed to define the author namespace -->
+
+    <!-- reverse y-axis back to normal SVG (0 is top) -->
+    <coordinates bbox="(0,200,300,0)">
+
+        <author:variable name="segment1"
+                         anchor="(20, 30)">
+            <author:variable name="pointA">
+                <author:variable name="x" value="2"/>
+                <author:variable name="y" value="5"/>
+            </author:variable>
+            <author:variable name="pointB">
+                <author:variable name="x" value="-1"/>
+                <author:variable name="y" value="12"/>
+            </author:variable>
+        </author:variable>
+    </coordinates>
+
+    <!-- required for prefig playground -->
+    <annotations/>
+</diagram>
